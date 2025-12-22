@@ -1,0 +1,142 @@
+:root {
+  --bg-dark: #0f0b1a;
+  --card-grad: linear-gradient(180deg, #3b2a60, #2a1f46);
+  --text-main: #ffffff;
+  --text-sub: #cfc7e6;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--bg-dark);
+}
+
+.page {
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+
+/* === HERO SECTION (the whole design) === */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+
+  background-image: url("Assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center 5%;
+  background-size: 100% auto;
+  background-position: center -300px;
+  background-color: var(--bg-dark);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+
+
+/* === CARD === */
+
+.card {
+  position: relative;
+
+  max-width: 760px;
+  width: 90%;
+  padding: 100px 64px 110px; /* ⬅ taller card */
+
+  border-radius: 28px;
+  background: var(--card-grad);
+  text-align: center;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+
+  z-index: 2;
+}
+
+
+
+.date {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin-bottom: 18px;
+  letter-spacing: 0.05em;
+}
+
+.message {
+  font-size: 21px;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+/* === DECORATIONS === */
+
+.chibi {
+  position: absolute;
+  width: 110px;
+  top: calc(50% - 243px);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.chibi.left {
+  left: calc(50% - 290px);
+  transform: scaleX(-1);
+}
+
+.chibi.right {
+  left: calc(50% + 180px);
+}
+
+.feather {
+  position: absolute;
+  width: 530px;
+  left: calc(50% - 685px);
+  top: calc(50% - 95px);
+  transform: scaleX(-1);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.logo {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;
+  opacity: 0.95;
+  z-index: 2;
+}
+
+/* === RESPONSIVE === */
+
+@media (max-width: 768px) {
+
+    body::before {
+    background-image: url("Assets/lavenderoots300.png");
+  }
+
+    .chibi,
+    .feather {
+    display: none;
+  }
+
+    .card {
+    padding: 40px 32px;
+  }
+}
